@@ -7,11 +7,13 @@
   <link rel="stylesheet" type="text/css" href="index.css"/>
   <title>Guitar Chords</title>
   <style>
+    /* tba figure out how to make text smaller inside circle if chord name is long like Fadd9 then
+          change font size */
     /* fixme Add in HTML5 things to section things off more*/
 
     /* todo add in arrows between element, with text above.
-          figure out how to make text smaller inside circle if chord name is long like Fadd9 then
-          change font size */
+    https://stackoverflow.com/questions/20037122/draw-an-arrow-between-two-divs
+           */
 
     .chords-container {
       display: flex;
@@ -27,6 +29,8 @@
       width: 60px;
       border-radius: 50%;
       line-height: 60px;
+      /* Align Circle Below */
+      margin: auto;
 
       color: white;
       text-align: center;
@@ -50,6 +54,24 @@
     .circle-diminished {
       background-color: lightsalmon;
     }
+
+    /* Controls space between each circle via a empty rectangle */
+    .node {
+      height: 100px;
+      width: 160px;
+      background-color: gainsboro;
+    }
+
+    /* .node#chord-0 {
+      height: 100px;
+      width: 160px;
+      background-color: aquamarine;
+    } */
+
+    .roman-num {
+      /* Align roman-num Below */
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -62,7 +84,8 @@
 </div>
 
 <div class="chords-container">
-  <div id="chord-0">
+
+  <div id="chord-0" class="node">
     <div class="roman-num">&#8544;</div>
     <!-- circle-major will change depending on keyname -->
     <div class="circle circle-major">
@@ -70,7 +93,7 @@
     </div>
   </div>
 
-  <div id="chord-1">
+  <div id="chord-1" class="node">
     <!-- https://www.toptal.com/designers/htmlarrows/numbers/roman-numeral-one/ -->
     <div class="roman-num">r3</div>
     <div class="circle circle-minor">
@@ -78,7 +101,7 @@
     </div>
   </div>
 
-  <div id="chord-2">
+  <div id="chord-2" class="node">
     <div class="roman-num">r4</div>
     <div class="circle circle-major">
       <div class="name">Fadd9</div>
