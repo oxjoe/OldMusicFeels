@@ -6,75 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <link rel="stylesheet" type="text/css" href="index.css"/>
   <title>Guitar Chords</title>
-  <style>
-    /* tba figure out how to make text smaller inside circle if chord name is long like Fadd9 then
-          change font size */
-    /* fixme Add in HTML5 things to section things off more*/
-
-    /* todo add in arrows between element, with text above.
-    https://stackoverflow.com/questions/20037122/draw-an-arrow-between-two-divs
-           */
-
-    .chords-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: 200px;
-      align-items: center;
-    }
-
-    .circle {
-      display: block;
-      height: 60px;
-      width: 60px;
-      border-radius: 50%;
-      line-height: 60px;
-      /* Align Circle Below */
-      margin: auto;
-
-      color: white;
-      text-align: center;
-      font-size: 2em;
-    }
-
-    .circle-major {
-      background-color: lightcoral;
-      /* Display roman numeral in CSS */
-      /* content: "\2160"; */
-    }
-
-    .circle-minor {
-      background-color: seagreen;
-    }
-
-    .circle-augmented {
-      background-color: lightskyblue;
-    }
-
-    .circle-diminished {
-      background-color: lightsalmon;
-    }
-
-    /* Controls space between each circle via a empty rectangle */
-    .node {
-      height: 100px;
-      width: 160px;
-      background-color: gainsboro;
-    }
-
-    /* .node#chord-0 {
-      height: 100px;
-      width: 160px;
-      background-color: aquamarine;
-    } */
-
-    .roman-num {
-      /* Align roman-num Below */
-      text-align: center;
-    }
-  </style>
 </head>
 
+<!--todo CHange with width of node and put an arrow in between-->
 <body>
 <div class="current-key-container">
   <form>
@@ -93,12 +27,22 @@
     </div>
   </div>
 
+  <div class="description-container">
+    <label> from chord-0 to chord-1 description</label>
+    <div class="arrow"> ----></div>
+  </div>
+
   <div id="chord-1" class="node">
     <!-- https://www.toptal.com/designers/htmlarrows/numbers/roman-numeral-one/ -->
     <div class="roman-num">r3</div>
     <div class="circle circle-minor">
       <div class="name">Em</div>
     </div>
+  </div>
+
+  <div class="description-container">
+    <label> from chord-1 to chord-2 description</label>
+    <div class="arrow"> ----></div>
   </div>
 
   <div id="chord-2" class="node">
