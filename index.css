@@ -1,10 +1,9 @@
 /* tba - figure out how to make text smaller inside circle if chord name is long like Fadd9 then
           change font size
-          - Add in HTML5 things to section things off more*/
+          */
 
-
-/* todo add in arrows between element, with text above.
-https://stackoverflow.com/questions/20037122/draw-an-arrow-between-two-divs
+/* plan add in arrows between element, with text above.
+    https://stackoverflow.com/questions/20037122/draw-an-arrow-between-two-divs
        */
 
 .chords-container {

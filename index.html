@@ -1,3 +1,4 @@
+<!--tba Add in HTML5 things to section things off more-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +9,16 @@
   <title>Guitar Chords</title>
 </head>
 
-<!--todo CHange with width of node and put an arrow in between-->
 <body>
 <div class="current-key-container">
   <form>
     <!-- pretty sure id-current-key not needed -->
-    Current Key<input id="id-current-key" type="text" name="current-key " value="C"></input>
+    <label for="id-current-key">Current Key</label>
+    <input id="id-current-key" type="text" name="current-key " value="C"/>
   </form>
 </div>
+<button type="button" id="undo-button">Undo</button>
+<button type="button" id="redo-button">Redo</button>
 
 <div class="chords-container">
 
@@ -28,7 +31,7 @@
   </div>
 
   <div class="description-container">
-    <label> from chord-0 to chord-1 description</label>
+    <label>M1 to m3</label>
     <div class="arrow"> ----></div>
   </div>
 
@@ -41,7 +44,7 @@
   </div>
 
   <div class="description-container">
-    <label> from chord-1 to chord-2 description</label>
+    <label> m3 to M4</label>
     <div class="arrow"> ----></div>
   </div>
 
@@ -53,6 +56,6 @@
   </div>
 </div>
 </body>
-<script src="circle-of-fifths.js"></script>
+<script src="..."></script>
 <script src="index.js"></script>
 </html>
