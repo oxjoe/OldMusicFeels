@@ -1,62 +1,63 @@
-<!--tba Add in HTML5 things to section things off more-->
+<!--TBA: Add in HTML5 things to section things off more-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <!--<script src="bundle.js" async></script>-->
   <script src="script.js" async></script>
-  <link rel="stylesheet" type="text/css" href="index.css"/>
+  <script src="scales.js" async></script>
+  <link rel="stylesheet" type="text/css" href="index.css" />
   <title>Guitar Chords</title>
 </head>
 
 <body>
-<div class="current-key-container">
-  <form>
-    <!-- pretty sure id-current-key not needed -->
-    <label for="id-current-key">Current Key</label>
-    <input id="id-current-key" type="text" name="current-key " value="C"/>
-  </form>
-</div>
-<button type="button" id="undo-button">Undo</button>
-<button type="button" id="redo-button">Redo</button>
+  <div class="current-key-container">
+    <form>
+      <!-- pretty sure id-current-key not needed -->
+      <label for="id-current-key">Current Key</label>
+      <input id="id-current-key" type="text" name="current-key " value="C" />
+    </form>
+  </div>
+  <button type="button" id="undo-button">Undo</button>
+  <button type="button" id="redo-button">Redo</button>
 
-<div class="chords-container">
+  <div class="chords-container">
+    <div id="chord-0" class="node">
+      <div class="roman-num">&#8544;</div>
+      <!-- circle-major will change depending on keyname -->
+      <div class="circle circle-major">
+        <div class="name">HTML C</div>
+      </div>
+    </div>
 
-  <div id="chord-0" class="node">
-    <div class="roman-num">&#8544;</div>
-    <!-- circle-major will change depending on keyname -->
-    <div class="circle circle-major">
-      <div class="name">HTML C</div>
+    <div class="description-container">
+      <label>M1 to m3</label>
+      <div class="arrow">----></div>
+    </div>
+
+    <div id="chord-1" class="node">
+      <!-- https://www.toptal.com/designers/htmlarrows/numbers/roman-numeral-one/ -->
+      <div class="roman-num">r3</div>
+      <div class="circle circle-minor">
+        <div class="name">HTML Em</div>
+      </div>
+    </div>
+
+    <div class="description-container">
+      <label> m3 to M4</label>
+      <div class="arrow">----></div>
+    </div>
+
+    <div id="chord-2" class="node">
+      <div class="roman-num">r4</div>
+      <div class="circle circle-major">
+        <div class="name">HTML Fadd9</div>
+      </div>
     </div>
   </div>
-
-  <div class="description-container">
-    <label>M1 to m3</label>
-    <div class="arrow"> ----></div>
-  </div>
-
-  <div id="chord-1" class="node">
-    <!-- https://www.toptal.com/designers/htmlarrows/numbers/roman-numeral-one/ -->
-    <div class="roman-num">r3</div>
-    <div class="circle circle-minor">
-      <div class="name">HTML Em</div>
-    </div>
-  </div>
-
-  <div class="description-container">
-    <label> m3 to M4</label>
-    <div class="arrow"> ----></div>
-  </div>
-
-  <div id="chord-2" class="node">
-    <div class="roman-num">r4</div>
-    <div class="circle circle-major">
-      <div class="name">HTML Fadd9</div>
-    </div>
-  </div>
-</div>
 </body>
 
 </html>
