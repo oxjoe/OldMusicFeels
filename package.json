@@ -2,7 +2,7 @@
   "name": "guitar-chords",
   "version": "1.0.0",
   "description": "Stuff will be put here eventually",
-  "main": "script.js",
+  "main": "server.js",
   "dependencies": {
     "dbly-linked-list": "^0.2.0"
   },
