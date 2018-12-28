@@ -5,20 +5,20 @@ let path = require('path')
 let app = express()
 
 // // EJS middleware
-// app.set('view engine', 'ejs')
-// app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
 
-// // Body parser middleware
-// app.use(bodyParser.json)
-// app.use(bodyParser.urlencoded({
-//   extended: false
-// }))
+// Body parser middleware
+app.use(bodyParser.json)
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 
-// // Static resources will be client folder
+// // probably not needed [Static resources will be client folder]
 // app.use(express.static(path.join(__dirname, 'client')))
 
 app.get('/', function (req, res) {
-  res.send('test')
+  res.render('testEJS')
 })
 
 app.listen(3000, function () {
