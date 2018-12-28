@@ -1,15 +1,19 @@
 /* eslint-disable no-undef */
 // https://github.com/jasonsjones/doubly-linked-list
 
-// takeaway IGNORE REQUIRE STUFF, JUST DO JAVASCRIPT STUFF (TESTS) AND VIDEOS, WHEN ADDING BACKEND IT SHOULD WORK
-// todo add a testing library
-/* NOTES: 1) Put dummy data into array
- *         so I can code unit test into it
- *         2) but array data into linkedlist
- *           code test to that
- *         3) Watch jest unit testing
- *         4) Watch express video then Mongo then from scratch */
+/* TODO: Finish express tutorial; then render */
 
+/*PLAN: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database*/
+
+// recommends react: https://stackoverflow.com/questions/39304549/why-would-i-need-template-engines-like-jade-or-ejs-on-the-backend
+// NOTES: I could render the inital page on the server side (header and footer would be same) just ONCE, then if changes happen client takes over for better SEO!
+
+// NOTES: I might need to convert to jQuery since I will do lots of dom manipulation???
+
+// NOTES: I think I have to use Browerify/Webpac/etc... to use npm linked list code
+// NOTES: Webpack was in Udemy
+
+/* PLAN: Write tests! */
 // Gets both "rn1" and "C"
 // console.log(document.getElementById("chord-0").innerText)
 
@@ -53,7 +57,7 @@ console.log(startIndex)
 
 let currentLocation = startIndex
 
-// TODO: Use jest to test!
+// Result is wrong
 console.log("A major test start:");
 console.log(keyOfSharps[currentLocation])
 console.log(keyOfSharps[currentLocation += w])
