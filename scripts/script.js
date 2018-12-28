@@ -16,9 +16,7 @@
 // Gets only "C"
 // console.log(document.getElementById("chord-0").querySelector(".name").innerHTML)]
 
-// let LinkedList = require('dbly-linked-list');
-// const list = new LinkedList()
-// console.log("list.isEmpty(): " + list.isEmpty())
+
 
 // 1) Scrape through and get chord names
 const noteNameArray = ['A', 'C#', 'Dadd9']
