@@ -4,24 +4,26 @@ let path = require('path')
 
 let app = express()
 
-// Body Parser Middleware
-app.use(bodyParser.json)
-app.use(bodyParser.urlencoded({
-  extended: false
-}))
+// // EJS middleware
+// app.set('view engine', 'ejs')
+// app.set('views', path.join(__dirname, 'views'))
 
-// Static Resources will be client folder
-app.use(express.static(path.join(__dirname, 'client')))
+// // Body parser middleware
+// app.use(bodyParser.json)
+// app.use(bodyParser.urlencoded({
+//   extended: false
+// }))
 
+// // Static resources will be client folder
+// app.use(express.static(path.join(__dirname, 'client')))
 
-// app.get('/', function (req, res) {
-//   res.send('Test')
-// })
-
-app.listen(3000, function () {
-  console.log('Server started on Port 3000');
+app.get('/', function (req, res) {
+  res.send('test')
 })
 
+app.listen(3000, function () {
+  console.log('Server started on Port 3000, Yay!')
+})
 
 // let LinkedList = require('dbly-linked-list')
 // const list = new LinkedList()
