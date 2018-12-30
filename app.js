@@ -1,6 +1,13 @@
 let express = require('express')
 let bodyParser = require('body-parser')
 let path = require('path')
+// https://express-validator.github.io/docs/index.html
+const {
+  check,
+  validationResult
+} = require('express-validator/check')
+
+// NOTES: Need to setup input validation
 
 let app = express()
 

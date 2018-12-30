@@ -1,7 +1,10 @@
 /* eslint-disable no-undef */
 // https://github.com/jasonsjones/doubly-linked-list
 
-/* TODO: Finish express tutorial; then render */
+/* TODO: 0) Draw out website on paper to visualize places then add CSS/HTML
+1) Webpack tutorial so I can use require!
+2) On MongoDB express tutorial part; then MonogoDB tutorial
+3) Use JEST for testing*/
 
 /*PLAN: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database*/
 
@@ -11,9 +14,7 @@
 // NOTES: I might need to convert to jQuery since I will do lots of dom manipulation???
 
 // NOTES: I think I have to use Browerify/Webpac/etc... to use npm linked list code
-// NOTES: Webpack was in Udemy
 
-/* PLAN: Write tests! */
 // Gets both "rn1" and "C"
 // console.log(document.getElementById("chord-0").innerText)
 
