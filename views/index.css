@@ -5,6 +5,9 @@
 /* PLAN: add in arrows between element, with text above.
     https://stackoverflow.com/questions/20037122/draw-an-arrow-between-two-divs
        */
+#first-time-button {
+  text-align: center
+}
 
 .chords-container {
   display: flex;

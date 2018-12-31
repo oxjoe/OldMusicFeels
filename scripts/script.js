@@ -1,15 +1,16 @@
 /* eslint-disable no-undef */
 // https://github.com/jasonsjones/doubly-linked-list
-
-/* TODO: 0) Draw out website on paper to visualize places then add CSS/HTML
+// https://github.com/taye/interact.js
+/* TODO:
 1) Webpack tutorial so I can use require!
-2) On MongoDB express tutorial part; then MonogoDB tutorial
-3) Use JEST for testing*/
+2) Put in nodes as linked-list
+0) On MongoDB express tutorial part; then MonogoDB tutorial
+0) Use JEST for testing*/
 
-/*PLAN: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database*/
+/*TBA: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database*/
 
 // recommends react: https://stackoverflow.com/questions/39304549/why-would-i-need-template-engines-like-jade-or-ejs-on-the-backend
-// NOTES: I could render the inital page on the server side (header and footer would be same) just ONCE, then if changes happen client takes over for better SEO!
+// PLAN: I could render the inital page on the server side (header and footer would be same) just ONCE, then if changes happen client takes over for better SEO!
 
 // NOTES: I might need to convert to jQuery since I will do lots of dom manipulation???
 
@@ -68,11 +69,6 @@ console.log(keyOfSharps[currentLocation += w])
 console.log(keyOfSharps[currentLocation += w])
 console.log(keyOfSharps[currentLocation += w])
 console.log(keyOfSharps[currentLocation += h])
-
-
-
-
-// console.log(b_major['key-name'])
 
 // PLAN: now i need to iterate through each .roman-num and add the quality of major or minor
 
