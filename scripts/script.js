@@ -5,9 +5,9 @@
 1) Webpack tutorial so I can use require!
 2) Put in nodes as linked-list
 0) On MongoDB express tutorial part; then MonogoDB tutorial
-0) Use JEST for testing*/
+0) Use JEST for testing */
 
-/*TBA: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database*/
+/*TBA: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database */
 
 // recommends react: https://stackoverflow.com/questions/39304549/why-would-i-need-template-engines-like-jade-or-ejs-on-the-backend
 // PLAN: I could render the inital page on the server side (header and footer would be same) just ONCE, then if changes happen client takes over for better SEO!
@@ -21,8 +21,6 @@
 
 // Gets only "C"
 // console.log(document.getElementById("chord-0").querySelector(".name").innerHTML)]
-
-
 
 // 1) Scrape through and get chord names
 const noteNameArray = ['A', 'C#', 'Dadd9']
@@ -42,7 +40,7 @@ document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQ
 
 const orderOfSharpsArray = ['F#', 'C#', 'G#', 'D#', 'A#', 'E#', 'B#']
 const orderOfFlatsArray = ['Bb', 'Eb', 'Ab', 'Db', 'Gb', 'Cb', 'Fb']
-console.log(a_major);
+console.log(a_major)
 
 // Definition of whole and half step
 const w = 2
@@ -60,7 +58,7 @@ console.log(startIndex)
 let currentLocation = startIndex
 
 // Result is wrong
-console.log("A major test start:");
+console.log('A major test start:')
 console.log(keyOfSharps[currentLocation])
 console.log(keyOfSharps[currentLocation += w])
 console.log(keyOfSharps[currentLocation += w])

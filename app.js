@@ -6,7 +6,7 @@ const {
   check,
   validationResult
 } = require('express-validator/check')
-const interact = require('interactjs');
+const interact = require('interactjs')
 
 // NOTES: Need to setup input validation
 
