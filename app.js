@@ -1,5 +1,3 @@
-import style from "./views/index.css";
-
 //#region of scales.js
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
@@ -103,7 +101,6 @@ const f_major = {
 }
 
 //#endregion
-
 //#region of roman-numerals.js
 const rn_ONE = '\u2160'
 const rn_TWO = '\u2161'
@@ -129,6 +126,14 @@ const flat = '\u266D'
 const diminished = '\u00B0'
 //#endregion
 
+
+
+import style from "./views/index.css";
+let LinkedList = require('dbly-linked-list')
+
+const list = new LinkedList()
+console.log("list.isEmpty(): " + list.isEmpty())
+
 // 1) Scrape through and get chord names
 const noteNameArray = ['A', 'C#', 'Dadd9']
 document.getElementById('chord-0').querySelector('.name').innerHTML = noteNameArray[0]
@@ -145,7 +150,9 @@ document.getElementById('chord-0').querySelector('.roman-num').innerHTML = noteQ
 document.getElementById('chord-1').querySelector('.roman-num').innerHTML = noteQualityArray[1]
 document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQualityArray[2]
 
-// alert('test')
+
+
+
 // let express = require('express')
 // let bodyParser = require('body-parser')
 // let path = require('path')
@@ -180,7 +187,3 @@ document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQ
 // app.listen(3000, function () {
 //   console.log('Server started on Port 3000, Yay!')
 // })
-
-// // let LinkedList = require('dbly-linked-list')
-// // const list = new LinkedList()
-// // console.log("list.isEmpty(): " + list.isEmpty())
