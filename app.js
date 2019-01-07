@@ -140,6 +140,23 @@ document.getElementById('chord-0').querySelector('.name').innerHTML = noteNameAr
 document.getElementById('chord-1').querySelector('.name').innerHTML = noteNameArray[1]
 document.getElementById('chord-2').querySelector('.name').innerHTML = noteNameArray[2]
 
+// Adds each note name to the array
+for (let index = 0; index < noteNameArray.length; index++) {
+  list.insert({
+    'noteName': noteNameArray[index]
+  })
+}
+
+console.log(list.getHeadNode().getData())
+// test: {noteName: "A"}
+console.log(list.getTailNode().getData())
+// test: {noteName: "Dadd9"}
+
+
+
+console.log("list.isEmpty(): " + list.isEmpty())
+
+
 // 2) Current key would be first chord
 document.getElementById('current-key').value = a_major['key-name']
 
@@ -149,7 +166,6 @@ const noteQualityArray = [rn_ONE, rn_three, rn_four]
 document.getElementById('chord-0').querySelector('.roman-num').innerHTML = noteQualityArray[0]
 document.getElementById('chord-1').querySelector('.roman-num').innerHTML = noteQualityArray[1]
 document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQualityArray[2]
-
 
 
 
