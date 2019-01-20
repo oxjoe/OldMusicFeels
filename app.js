@@ -132,6 +132,7 @@ import style from "./views/index.css";
 let LinkedList = require('dbly-linked-list')
 
 const list = new LinkedList()
+
 console.log("list.isEmpty(): " + list.isEmpty())
 
 // 1) Scrape through and get chord names
@@ -168,6 +169,7 @@ document.getElementById('chord-1').querySelector('.roman-num').innerHTML = noteQ
 document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQualityArray[2]
 
 
+exports.list = list
 
 // let express = require('express')
 // let bodyParser = require('body-parser')
