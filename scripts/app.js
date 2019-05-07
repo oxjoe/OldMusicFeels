@@ -1,6 +1,14 @@
-//#region of scales.js
+/* eslint-disable eol-last */
+/* eslint-disable semi */
+/* eslint-disable quotes */
 /* eslint-disable camelcase */
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-multiple-empty-lines */
+import '../views/index.css';
+// import $ from "jquery";
+// https://www.npmjs.com/package/webpack-jquery-ui
+require('webpack-jquery-ui');
+require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
+// #region of scales.js
 const c_major = {
   'key-name': 'c_major',
   'has-sharps': null,
@@ -100,8 +108,8 @@ const f_major = {
   'relative-minor': 'Dm'
 }
 
-//#endregion
-//#region of roman-numerals.js
+// #endregion
+// #region of roman-numerals.js
 const rn_ONE = '\u2160'
 const rn_TWO = '\u2161'
 const rn_THREE = '\u2162'
@@ -124,16 +132,10 @@ const sharp = '\u266F'
 const flat = '\u266D'
 
 const diminished = '\u00B0'
-//#endregion
+// #endregion
 
-
-
-import style from "./views/index.css";
 let LinkedList = require('dbly-linked-list')
-
 const list = new LinkedList()
-
-console.log("list.isEmpty(): " + list.isEmpty())
 
 // 1) Scrape through and get chord names
 const noteNameArray = ['A', 'C#', 'Dadd9']
@@ -155,53 +157,20 @@ console.log(list.getTailNode().getData())
 
 
 
-console.log("list.isEmpty(): " + list.isEmpty())
-
-
-// 2) Current key would be first chord
-document.getElementById('current-key').value = a_major['key-name']
+console.log('list.isEmpty(): ' + list.isEmpty())
 
 // 3) Add the roman numeral
 const noteQualityArray = [rn_ONE, rn_three, rn_four]
 
-document.getElementById('chord-0').querySelector('.roman-num').innerHTML = noteQualityArray[0]
-document.getElementById('chord-1').querySelector('.roman-num').innerHTML = noteQualityArray[1]
-document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQualityArray[2]
+// document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQualityArray[2]
+
+document.getElementById('current-key').value = 'Am'
+
+$(document).ready(function () {
+  $(".chords-container #chord-0 .roman-num").html(noteQualityArray[0])
+  $(".chords-container #chord-1 .roman-num").html(noteQualityArray[1])
+  $(".chords-container #chord-2 .roman-num").html(noteQualityArray[2])
 
 
-exports.list = list
-
-// let express = require('express')
-// let bodyParser = require('body-parser')
-// let path = require('path')
-// // https://express-validator.github.io/docs/index.html
-// const {
-//   check,
-//   validationResult
-// } = require('express-validator/check')
-// const interact = require('interactjs')
-
-// // NOTES: Need to setup input validation
-
-// let app = express()
-
-// // // EJS middleware
-// app.set('view engine', 'ejs')
-// app.set('views', path.join(__dirname, 'views'))
-
-// // Body parser middleware
-// app.use(bodyParser.json)
-// app.use(bodyParser.urlencoded({
-//   extended: false
-// }))
-
-// // // probably not needed [Static resources will be client folder]
-// // app.use(express.static(path.join(__dirname, 'client')))
-
-// app.get('/', function (req, res) {
-//   res.render('testEJS')
-// })
-
-// app.listen(3000, function () {
-//   console.log('Server started on Port 3000, Yay!')
-// })
+  $('#chord-0').remove
+});
