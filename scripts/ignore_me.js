@@ -11,7 +11,7 @@
 // Move my main scripts to app.js, and eventually divide up files and figure out webpacking them
 // NOTES: npm run start -> to run webpack
 
-/*TBA: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database */
+/* TBA: After I scrap through and get chord names, I display all the chord names, chord qulaities, arrows, circles, etc.... ON THE CLIENT SIDE. Then I access database for the descriptions, and would access database and send to client JSON data (access using XHR calls, Ajax to update parts of page) OR I could store descriptions in localStorage till its full OR put the more obscure descriptions onto a database */
 
 // NOTES: I might need to convert to jQuery since I will do lots of dom manipulation???
 

@@ -1,13 +1,10 @@
-/* eslint-disable eol-last */
-/* eslint-disable semi */
-/* eslint-disable quotes */
-/* eslint-disable camelcase */
 /* eslint-disable no-multiple-empty-lines */
-import '../views/index.css';
+/* eslint-disable camelcase */
+import '../views/index.css'
 // import $ from "jquery";
 // https://www.npmjs.com/package/webpack-jquery-ui
-require('webpack-jquery-ui');
-require('webpack-jquery-ui/css');  //ommit, if you don't want to load basic css theme
+require('webpack-jquery-ui')
+require('webpack-jquery-ui/css') // ommit, if you don't want to load basic css theme
 // #region of scales.js
 const c_major = {
   'key-name': 'c_major',
@@ -134,14 +131,30 @@ const flat = '\u266D'
 const diminished = '\u00B0'
 // #endregion
 
+// NOTES: Figure out what element(s) to move for drag an drop functionality
+
 let LinkedList = require('dbly-linked-list')
 const list = new LinkedList()
 
-// 1) Scrape through and get chord names
-const noteNameArray = ['A', 'C#', 'Dadd9']
-document.getElementById('chord-0').querySelector('.name').innerHTML = noteNameArray[0]
-document.getElementById('chord-1').querySelector('.name').innerHTML = noteNameArray[1]
-document.getElementById('chord-2').querySelector('.name').innerHTML = noteNameArray[2]
+// Current key is in C
+document.getElementById('current-key').value = 'C'
+
+// assume noteNameArray[0] is typed in first input
+// then [1] is second input
+const noteNameArray = ['C', 'G', 'Dadd9']
+
+/* PLAN:
+Make input + buttom to submit a note name.
+U types in C
+C pops up with I above its head
+U types in G
+G pops up with V above its head
+  G cannot be on top of C Items cannot stack
+If U clicks and drag G to after C, then make C arrow appear with discription.
+If U clicks and drag G to before C, then make G arrow appear with discription. */
+
+
+const noteQualityArray = [rn_ONE, rn_FIVE, rn_TWO]
 
 // Adds each note name to the array
 for (let index = 0; index < noteNameArray.length; index++) {
@@ -149,28 +162,22 @@ for (let index = 0; index < noteNameArray.length; index++) {
     'noteName': noteNameArray[index]
   })
 }
-
 console.log(list.getHeadNode().getData())
 // test: {noteName: "A"}
 console.log(list.getTailNode().getData())
 // test: {noteName: "Dadd9"}
 
 
-
-console.log('list.isEmpty(): ' + list.isEmpty())
-
-// 3) Add the roman numeral
-const noteQualityArray = [rn_ONE, rn_three, rn_four]
-
-// document.getElementById('chord-2').querySelector('.roman-num').innerHTML = noteQualityArray[2]
-
-document.getElementById('current-key').value = 'Am'
-
 $(document).ready(function () {
-  $(".chords-container #chord-0 .roman-num").html(noteQualityArray[0])
-  $(".chords-container #chord-1 .roman-num").html(noteQualityArray[1])
-  $(".chords-container #chord-2 .roman-num").html(noteQualityArray[2])
+  $('.chords-container #chord-0 .name').html(noteNameArray[0])
+  $('.chords-container #chord-1 .name').html(noteNameArray[1])
+  $('.chords-container #chord-2 .name').html(noteNameArray[2])
 
+  $('.chords-container #chord-0 .roman-num').html(noteQualityArray[0])
+  $('.chords-container #chord-1 .roman-num').html(noteQualityArray[1])
+  $('.chords-container #chord-2 .roman-num').html(noteQualityArray[2])
 
-  $('#chord-0').remove
-});
+  // $('.node').remove()
+  $('.description-container').remove()
+})
+

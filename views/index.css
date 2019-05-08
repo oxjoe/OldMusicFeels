@@ -49,10 +49,8 @@
   background-color: lightsalmon;
 }
 
-/* Controls space between each circle via a empty rectangle */
+/* Node is the note name and quality */
 .node {
-  height: 100px;
-  width: 100px;
   background-color: lightgreen;
 }
 
