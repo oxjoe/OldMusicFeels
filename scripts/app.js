@@ -154,6 +154,13 @@ If U clicks and drag G to after C, then make C arrow appear with discription.
 If U clicks and drag G to before C, then make G arrow appear with discription. */
 
 
+/* PLAN:
+Make a new branch (in case I revert back to jquery)
+Work with that branch for Java Spring and Angular
+  Do Backend First
+    Have some list of common chord movements OR song chords that will be stored in Database and can be added/removed
+ */
+
 const noteQualityArray = [rn_ONE, rn_FIVE, rn_TWO]
 
 // Adds each note name to the array
