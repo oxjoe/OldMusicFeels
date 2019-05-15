@@ -6,12 +6,7 @@ import '../views/index.css'
 require('webpack-jquery-ui')
 require('webpack-jquery-ui/css') // ommit, if you don't want to load basic css theme
 // #region of scales.js
-const c_major = {
-  'key-name': 'c_major',
-  'has-sharps': null,
-  'key-signature': 0,
-  'relative-minor': 'Am'
-}
+const cMajorArray = [null, 'C', 'D', 'E', 'F', 'G', 'A', 'B']
 
 // KEYS WITH SHARPS
 const g_major = {
@@ -106,22 +101,23 @@ const f_major = {
 }
 
 // #endregion
-// #region of roman-numerals.js
-const rn_ONE = '\u2160'
-const rn_TWO = '\u2161'
-const rn_THREE = '\u2162'
-const rn_FOUR = '\u2163'
-const rn_FIVE = '\u2164'
-const rn_SIX = '\u2165'
-const rn_SEVEN = '\u2166'
 
-const rn_one = '\u2170'
-const rn_two = '\u2171'
-const rn_three = '\u2172'
-const rn_four = '\u2173'
-const rn_five = '\u2174'
-const rn_six = '\u2175'
-const rn_seven = '\u2176'
+// #region of roman-numerals.js
+const rnONE = '\u2160'
+const rnTWO = '\u2161'
+const rnTHREE = '\u2162'
+const rnFOUR = '\u2163'
+const rnFIVE = '\u2164'
+const rnSIX = '\u2165'
+const rnSEVEN = '\u2166'
+
+const rnOne = '\u2170'
+const rnTwo = '\u2171'
+const rnThree = '\u2172'
+const rnFour = '\u2173'
+const rnFive = '\u2174'
+const rnSix = '\u2175'
+const rnSeven = '\u2176'
 
 // lookup qualities: http://openmusictheory.com/triads.html
 const natural = '\u266E'
@@ -131,17 +127,34 @@ const flat = '\u266D'
 const diminished = '\u00B0'
 // #endregion
 
-// NOTES: Figure out what element(s) to move for drag an drop functionality
+
+// PLAN: DO logic first. Then Angular it?
+
+// JavaScript Event Keycodes
+const a = 65
+const b = 66
+const c = 67
+const d = 68
+const e = 69
+const f = 70
+const g = 71
 
 let LinkedList = require('dbly-linked-list')
 const list = new LinkedList()
+// If current key is in C then...
+// pre-create all the scale arrays above
+let currentKey = document.getElementById('current-key').value
 
-// Current key is in C
-document.getElementById('current-key').value = 'C'
 
-// assume noteNameArray[0] is typed in first input
-// then [1] is second input
-const noteNameArray = ['C', 'G', 'Dadd9']
+
+$(document).keydown(function (e) {
+  if (e.keyCode == c) {
+    // create node function
+  } else if (e.keyCode == d) {
+  }
+});
+
+
 
 /* PLAN:
 Make input + buttom to submit a note name.
@@ -160,8 +173,10 @@ Work with that branch for Java Spring and Angular
   Do Backend First
     Have some list of common chord movements OR song chords that will be stored in Database and can be added/removed
  */
-
-const noteQualityArray = [rn_ONE, rn_FIVE, rn_TWO]
+// assume noteNameArray[0] is typed in first input
+// then [1] is second input
+const noteNameArray = ['C', 'G', 'Dadd9']
+const noteQualityArray = [rnONE, rnFIVE, rnTWO]
 
 // Adds each note name to the array
 for (let index = 0; index < noteNameArray.length; index++) {
