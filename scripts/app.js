@@ -1,3 +1,5 @@
+/* eslint-disable key-spacing */
+/* eslint-disable quotes */
 /* eslint-disable object-curly-spacing */
 /* eslint-disable comma-spacing */
 /* eslint-disable standard/array-bracket-even-spacing */
@@ -92,8 +94,63 @@ inputField.onfocus = () => {
   inputField.setAttribute('selected', 'true')
 } */
 
+// I would only get one tuple at a time
+let exampleTuple = '{ "id": 1, "numbers": "1,5", "names": "C,G", "notes": "Feels strong moving from the root to the fifth" }'
+let jsonObj = JSON.parse(exampleTuple)
+
+console.log('jsonObj :', jsonObj);
+// i = number of key presses
+// not sure if necessary
+let i = 0
+
 function createNode(num) {
+  i++
+  console.log('i :', i);
+  console.log('list.getSize() :', list.getSize());
+  console.log('list.getTailNode() :', list.getTailNode())
+  console.log('* Inserted new Chord *')
   return new Chord(majorPattern[num], currentKeyArray[num], '')
+}
+
+// The letter 'l', stands for last. So two l's ('ll') means last last.
+let lChord;
+let lChordName;
+let lChordNote;
+let lChordNumber;
+
+let llChord;
+let llChordName;
+let llChordNote;
+let llChordNumber;
+
+
+
+// Function that will serach for a note/relationship between two chords numbers and append them
+function searchForRelationship(chordx, chordy) {
+  // Combine the rn from llchord and lchord to form a 'rn, rn' that will match one of the numbers in the tuple column
+  let combinedNumber = llChord.number + ',' + lChord.number
+  console.log('combinedNumber :', combinedNumber);
+  // TODO: Now I have my combinedNumber and I have to compare it with each numbers column in the database table.
+  // TODO: I also have to write something to parse PostGreSQL (look at my sql for the variable/function assignment)
+
+}
+// I only put in data after the first node has been put in
+// i    would go somewhere in here if it was needed
+function putInData() {
+  // Check if last last node exists
+  if (list.getTailNode().hasPrev()) {
+    llChord = list.getTailNode().prev.getData()
+    lChord = list.getTailNode().getData();
+    console.log('llChord: ', llChord);
+    console.log('lChord: ', lChord);
+    searchForRelationship(llChord, lChord)
+  } else {
+    console.error('No prior node exists');
+  }
+
+  // lastChordNumber = lastChord.number
+  // lastChordName = lastChord.name
+  // lastChordNote = lastChord.note
 }
 
 $(document).keyup(function (e) {
@@ -101,30 +158,59 @@ $(document).keyup(function (e) {
   console.log('keyPress :', keyPress);
   if (keyPress === currentKeyArrayClean[1]) {
     list.insert(createNode(1))
+    putInData();
   } else if (keyPress === currentKeyArrayClean[2]) {
     list.insert(createNode(2))
+    putInData();
   } else if (keyPress === currentKeyArrayClean[3]) {
     list.insert(createNode(3))
+    putInData();
   } else if (keyPress === currentKeyArrayClean[4]) {
     list.insert(createNode(4))
+    putInData();
   } else if (keyPress === currentKeyArrayClean[5]) {
     list.insert(createNode(5))
+    putInData();
   } else if (keyPress === currentKeyArrayClean[6]) {
     list.insert(createNode(6))
+    putInData();
   } else if (keyPress === currentKeyArrayClean[7]) {
     list.insert(createNode(7))
+    putInData();
   } else {
     console.error('Must stay within key');
   }
-  console.log(list.size)
-  console.log(list.getTailNode())
 });
+
 
 /* PLAN:
 1) If I type a letter, then I create a node.
-2) Remember to use Angular to get the 'dynamic' html
+2) Remember to use Angular to get the 'dynamic' html\
+?) 5/17 - Now i need to figure out how to add data from the server to the corresponding node
+
+Also if I type in G then it shows 'ii' and 'G'. It should show Gm
+
+?) Now I need to render the Node/DOM with Angular
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  */
 
+
+/*
+
+ */
 
 
 // const noteNameArray = ['F', 'C', 'G']

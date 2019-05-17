@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 // Note Quality Unicode lookup qualities: http://openmusictheory.com/triads.html
 /* eslint-disable comma-spacing */
 /* eslint-disable standard/array-bracket-even-spacing */
@@ -24,10 +25,11 @@ const diminished = '\u00B0'
 const cMajor = [null, 'C', 'D', 'E', 'F', 'G', 'A', 'B']
 const cMinor = [null, 'C', 'D', 'E' + flat, 'F', 'G', 'A' + flat, 'B' + flat]
 
-// Standard scale to make the major and minor scales array's clean again.
+// Standard scale to make the major and minor scales array's clean again, so when inputting chords. For example, for inputting scale degree 4 for F you would just have to type B and not Bb.
 let fClear = [null, 'F', 'G', 'A', 'B', 'C', 'D', 'E']
 
-let fMajor = [fClear, 'F', 'G', 'A', 'B' + flat, 'C', 'D', 'E']
+// Remeber that I'm describing the Chords! NOT THE NOTES OF THE SCALE
+let fMajor = [fClear, 'F', 'Gm', 'Am', 'B' + flat, 'C', 'Dm', 'E' + diminished]
 // fMajor[0] is without accidentals
 
 let fMinor = [fClear, 'F', 'G', 'A' + flat, 'B' + flat, 'C', 'D' + flat, 'E' + flat]
