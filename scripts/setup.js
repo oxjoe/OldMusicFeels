@@ -22,24 +22,22 @@ const natural = '\u266E'
 const sharp = '\u266F'
 const diminished = '\u00B0'
 
-const cMajor = [null, 'C', 'D', 'E', 'F', 'G', 'A', 'B']
-const cMinor = [null, 'C', 'D', 'E' + flat, 'F', 'G', 'A' + flat, 'B' + flat]
+// Remember that I'm describing the quality of the Chords! NOT THE NOTES OF THE SCALE.
 
-// Standard scale to make the major and minor scales array's clean again, so when inputting chords. For example, for inputting scale degree 4 for F you would just have to type B and not Bb.
-let fClear = [null, 'F', 'G', 'A', 'B', 'C', 'D', 'E']
+const cClean = [null, 'C', 'D', 'E', 'F', 'G', 'A', 'B']
+// https://www.basicmusictheory.com/c-major-triad-chords
+const cMajor = [cClean, 'C', 'Dm', 'Em', 'F', 'G', 'Am', 'B' + diminished]
+// https://www.basicmusictheory.com/c-minor-triad-chords
+const cMinor = [cClean, 'Cm', 'D' + diminished, 'E' + flat, 'Fm', 'Gm', 'A' + flat, 'B' + flat]
 
-// Remeber that I'm describing the Chords! NOT THE NOTES OF THE SCALE
-let fMajor = [fClear, 'F', 'Gm', 'Am', 'B' + flat, 'C', 'Dm', 'E' + diminished]
-// fMajor[0] is without accidentals
+// Standard scale to make the major and minor scales array's clean again for when inputting chords. For example, for inputting scale degree 4 for F major you would just have to type B and not Bb.
+const fClean = [null, 'F', 'G', 'A', 'B', 'C', 'D', 'E']
+const fMajor = [fClean, 'F', 'Gm', 'Am', 'B' + flat, 'C', 'Dm', 'E' + diminished]
+const fMinor = [fClean, 'Fm', 'G' + diminished, 'A' + flat, 'B' + flat + 'm', 'Cm', 'D' + flat, 'E' + flat]
 
-let fMinor = [fClear, 'F', 'G', 'A' + flat, 'B' + flat, 'C', 'D' + flat, 'E' + flat]
-console.log('fClear :', fClear);
+console.log('fClear :', fClean);
 console.log('fMajor: ' + fMajor);
 console.log('fMinor: ' + fMinor);
-
-
-
-const gMajorNames = [null, 'G', 'A', 'B', 'C', 'D', 'E', 'F' + sharp]
 
 let currentKey = document.getElementById('current-key').value
 let currentKeyArray
@@ -49,8 +47,6 @@ function setCurrentArrays(arr) {
   currentKeyArray = arr
   currentKeyArrayClean = arr[0]
 }
-// Constraints:
-// MUST STAY WITHIN THE KEY (EG If i stype with capitazlation then...)
 
 // Set my current key to be whatever the input box value is.
 if (currentKey === 'C' || currentKey === 'CM') {
