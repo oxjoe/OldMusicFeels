@@ -23,6 +23,7 @@ const sharp = '\u266F'
 const diminished = '\u00B0'
 
 // Remember that I'm describing the quality of the Chords! NOT THE NOTES OF THE SCALE.
+// As of right now I'm assuming uppercase mode
 
 const cClean = [null, 'C', 'D', 'E', 'F', 'G', 'A', 'B']
 // https://www.basicmusictheory.com/c-major-triad-chords
@@ -46,21 +47,21 @@ let currentKeyArrayClean
 function setCurrentArrays(arr) {
   currentKeyArray = arr
   currentKeyArrayClean = arr[0]
+  console.log('setCurrentArrays = Success IN SETUP');
 }
 
-// Set my current key to be whatever the input box value is.
 if (currentKey === 'C' || currentKey === 'CM') {
   setCurrentArrays(cMajor)
-} else if (currentKey === 'c' || currentKey === 'Cm') {
+} else if (currentKey === 'cm' || currentKey === 'Cm') {
   setCurrentArrays(cMinor)
 } else if (currentKey === 'D' || currentKey === 'DM') {
   setCurrentArrays(dMajor)
 } else if (currentKey === 'd' || currentKey === 'Dm') {
   setCurrentArrays(dMinor)
-} else if (currentKey === 'F' || currentKey === 'FM') {
+} else if (currentKey === 'F' || currentKey === 'f') {
   setCurrentArrays(fMajor)
-} else if (currentKey === 'f' || currentKey === 'Fm') {
+} else if (currentKey === 'Fm' || currentKey === 'fm') {
   setCurrentArrays(fMinor)
 } else {
-  console.error('Not a valid key/key doesn\'t exist');
+  console.error('Only supports major and minor keys right now');
 }

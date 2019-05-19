@@ -25,21 +25,22 @@ require('webpack-jquery-ui')
 require('webpack-jquery-ui/css') // ommit, if you don't want to load basic css theme
 
 // #region | Roman Numeral Unicode Declarations
-const rnONE = '\u2160'
-const rnTWO = '\u2161'
-const rnTHREE = '\u2162'
-const rnFOUR = '\u2163'
-const rnFIVE = '\u2164'
-const rnSIX = '\u2165'
-const rnSEVEN = '\u2166'
+// u stands for uppercase and l stands for lowercase
+const u1 = '\u2160'
+const u2 = '\u2161'
+const u3 = '\u2162'
+const u4 = '\u2163'
+const u5 = '\u2164'
+const u6 = '\u2165'
+const u7 = '\u2166'
 
-const rnOne = '\u2170'
-const rnTwo = '\u2171'
-const rnThree = '\u2172'
-const rnFour = '\u2173'
-const rnFive = '\u2174'
-const rnSix = '\u2175'
-const rnSeven = '\u2176'
+const l1 = '\u2170'
+const l2 = '\u2171'
+const l3 = '\u2172'
+const l4 = '\u2173'
+const l5 = '\u2174'
+const l6 = '\u2175'
+const l7 = '\u2176'
 // #endregion
 
 class Chord {
@@ -48,64 +49,54 @@ class Chord {
     this.name = name
     this.note = note
   }
-  // get number() {
-  //   return this.number
-  // }
+  get number() {
+    return this._number
+  }
 
-  // set number(value) {
-  //   this.number = value
-  // }
+  set number(value) {
+    this._number = value
+  }
 
-  // get name() {
-  //   return this.name
-  // }
+  get name() {
+    return this._name
+  }
 
-  // set name(value) {
-  //   this.name = value
-  // }
-  // get note() {
-  //   return this.note
-  // }
+  set name(value) {
+    this._name = value
+  }
+  get note() {
+    return this._note
+  }
 
-  // set note(value) {
-  //   this.note = value
-  // }
+  set note(value) {
+    this._note = value
+  }
 }
 
-const majorPattern = [null, rnONE, rnTwo, rnThree, rnFOUR, rnFIVE, rnSix, rnSeven + diminished]
-const minorPattern = [null, rnOne, rnTwo + diminished, rnTHREE, rnFour, rnFIVE, rnSIX, rnSeven + diminished]
+const majorPattern = [null, u1, l2, l3, u4, u5, l6, l7 + diminished]
+const minorPattern = [null, l1, l2 + diminished, u3, l4, l5, u6, u7]
 console.log('majorPattern: ' + majorPattern);
 console.log('minorPattern: ' + minorPattern);
 
-// Option to allow follow casing (capitalization of fMinor follows the corresponding roman numeral). Currently it does not
-
-
-
 let LinkedList = require('dbly-linked-list')
 const list = new LinkedList()
-// TODO: pre-create all the scale arrays above
-
 
 console.log('currentKeyArray :', currentKeyArray);
 console.log('currentKeyArrayClean :', currentKeyArrayClean);
 /* const inputField = document.getElementById('current-key');
+For not gettig user input while in the input box
 // https://www.w3schools.com/jsref/event_onfocus.asp
 inputField.onfocus = () => {
   inputField.setAttribute('selected', 'true')
 } */
 
-// I would only get one tuple at a time
-let exampleTuple = '{ "id": 1, "numbers": "1,5", "names": "C,G", "notes": "Feels strong moving from the root to the fifth" }'
-let jsonObj = JSON.parse(exampleTuple)
+// I would only get one tuple at a time via AJAX 
+let json = '{"id":1,"numbers":"Ⅰ,Ⅴ","names":"C,G","notes":"Feels strong moving from the root to the fifth"}'
+let exampleTuple = JSON.parse(json)
 
-console.log('jsonObj :', jsonObj);
-// i = number of key presses
-// not sure if necessary
-let i = 0
+console.log('exampleTuple :', exampleTuple);
 
 function createNode(num) {
-  i++
-  console.log('i :', i);
   console.log('list.getSize() :', list.getSize());
   console.log('list.getTailNode() :', list.getTailNode())
   console.log('* Inserted new Chord *')
@@ -114,14 +105,7 @@ function createNode(num) {
 
 // The letter 'l', stands for last. So two l's ('ll') means last last.
 let lChord;
-let lChordName;
-let lChordNote;
-let lChordNumber;
-
 let llChord;
-let llChordName;
-let llChordNote;
-let llChordNumber;
 
 
 
@@ -130,12 +114,17 @@ function searchForRelationship(chordx, chordy) {
   // Combine the rn from llchord and lchord to form a 'rn, rn' that will match one of the numbers in the tuple column
   let combinedNumber = llChord.number + ',' + lChord.number
   console.log('combinedNumber :', combinedNumber);
-  // TODO: Now I have my combinedNumber and I have to compare it with each numbers column in the database table.
-  // TODO: I also have to write something to parse PostGreSQL (look at my sql for the variable/function assignment)
+  // TODO:  Now I have my combinedNumber and I have to compare it with each numbers column in the database table. If it's a match then add the note from db to clientside.
+  //  So I should cache my database data on the page, and search all the tuples.numbers to see if it matches the combinedNumber like below.
+  if (combinedNumber === exampleTuple.numbers) {
+    llChord.note = exampleTuple.notes
+    console.log('llChord :', llChord);
+    console.log('lChord :', lChord);
+  }
 
 }
 // I only put in data after the first node has been put in
-// i    would go somewhere in here if it was needed
+// i would go somewhere in here if it was needed
 function putInData() {
   // Check if last last node exists
   if (list.getTailNode().hasPrev()) {
@@ -147,10 +136,6 @@ function putInData() {
   } else {
     console.error('No prior node exists');
   }
-
-  // lastChordNumber = lastChord.number
-  // lastChordName = lastChord.name
-  // lastChordNote = lastChord.note
 }
 
 $(document).keyup(function (e) {
@@ -181,7 +166,6 @@ $(document).keyup(function (e) {
     console.error('Must stay within key');
   }
 });
-
 
 /* PLAN:
 1) If I type a letter, then I create a node.

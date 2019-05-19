@@ -1,65 +1,69 @@
 <!--TBA: Add in HTML5 things to section things off more-->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Music Feels (title in progress)</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" type="text/css" href="index.css" />
-  <title>Guitar Chords</title>
-</head>
+  <body>
+    <div class="current-key-container">
+      <form>
+        <!-- pretty sure id-current-key not needed -->
+        <label for="current-key">Current Key (is case sensitive)</label>
+        <input
+          id="current-key"
+          type="text"
+          style="width:300px"
+          placeholder="Enter the current key (default is C)"
+          value="F"
+        />
+      </form>
+    </div>
+    <!-- first-time-button/help would disappear after 20 sec or so -->
+    <!-- <button type="button" id="first-time-button">FIrst time? Click here</button> -->
+    <!-- <button type="button" id="example-chords-button">Show an example</button> -->
+    <!-- By default you can type in chords -->
+    <!-- <button type="button" id="undo-button">Undo</button> -->
+    <!-- <button type="button" id="redo-button">Redo</button> -->
 
-<body>
-  <div class="current-key-container">
-    <form>
-      <!-- pretty sure id-current-key not needed -->
-      <label for="current-key">Current Key</label>
-      <input id="current-key" type="text" style="width:300px" placeholder="Enter the current key (default is C)" value = 'F'/>
-    </form>
-  </div>
-  <!-- first-time-button/help would disappear after 20 sec or so -->
-  <!-- <button type="button" id="first-time-button">FIrst time? Click here</button> -->
-  <!-- <button type="button" id="example-chords-button">Show an example</button> -->
-  <!-- By default you can type in chords -->
-  <!-- <button type="button" id="undo-button">Undo</button> -->
-  <!-- <button type="button" id="redo-button">Redo</button> -->
+    <div class="chords-container">
+      <div id="chord-0" class="node">
+        <!-- r1: &#8544; -->
+        <div class="roman-num">r1</div>
+        <!-- circle-major will change depending on keyname -->
+        <div class="circle circle-major">
+          <div class="name">HTML C</div>
+        </div>
+      </div>
 
-  <div class="chords-container">
-    <div id="chord-0" class="node">
-      <!-- r1: &#8544; -->
-      <div class="roman-num">r1</div>
-      <!-- circle-major will change depending on keyname -->
-      <div class="circle circle-major">
-        <div class="name">HTML C</div>
+      <div class="description-container">
+        <label>HTML M1 to m3</label>
+        <div class="arrow">----></div>
+      </div>
+
+      <div id="chord-1" class="node">
+        <!-- https://www.toptal.com/designers/htmlarrows/numbers/roman-numeral-one/ -->
+        <div class="roman-num">r3</div>
+        <div class="circle circle-minor">
+          <div class="name">HTML Em</div>
+        </div>
+      </div>
+
+      <div class="description-container">
+        <label>HTML m3 to M4</label>
+        <div class="arrow">----></div>
+      </div>
+
+      <div id="chord-2" class="node">
+        <div class="roman-num">r4</div>
+        <div class="circle circle-major">
+          <div class="name">HTML Fadd9</div>
+        </div>
       </div>
     </div>
-
-    <div class="description-container">
-      <label>HTML M1 to m3</label>
-      <div class="arrow">----></div>
-    </div>
-
-    <div id="chord-1" class="node">
-      <!-- https://www.toptal.com/designers/htmlarrows/numbers/roman-numeral-one/ -->
-      <div class="roman-num">r3</div>
-      <div class="circle circle-minor">
-        <div class="name">HTML Em</div>
-      </div>
-    </div>
-
-    <div class="description-container">
-      <label>HTML m3 to M4</label>
-      <div class="arrow">----></div>
-    </div>
-
-    <div id="chord-2" class="node">
-      <div class="roman-num">r4</div>
-      <div class="circle circle-major">
-        <div class="name">HTML Fadd9</div>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
